@@ -32,5 +32,6 @@ To set up and run this project locally, follow these steps:
 1. **Clone the Repository**  
    Open your terminal and run:
    ```bash
-   git clone https://github.com/yourusername/react-table-app.git
-   cd react-table-app
+   git clone https://github.com/Ganesh-Mahind/mbbs_landing_page.git
+   cd mbbs_landing_page
+   
