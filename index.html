@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study MBBS Abroad</title>
+  <meta name="description" content="Study MBBS Abroad offers you the opportunity to study medicine in top international universities. Enjoy affordable fees, quality education, and global exposure. Apply now!">
+  <meta name="keywords" content="MBBS Abroad, study abroad, medical education, affordable fees, global exposure">
+  <link rel="canonical" href="https://www.yourdomain.com/" />
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  <!-- End Google Analytics -->
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'FACEBOOK_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=FACEBOOK_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <script defer src="assets/js/script.js"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- Hero Section -->
+  <section class="bg-blue-600 text-white text-center py-20 animate__animated animate__fadeInDown">
+    <h1 class="text-4xl font-bold">Study MBBS Abroad</h1>
+    <p class="text-lg mt-2">Apply Now for MBBS Abroad in Top Universities!</p>
+    <button id="heroCta" class="mt-4 px-6 py-2 bg-yellow-500 text-black font-semibold rounded animate__animated animate__pulse animate__infinite">
+      Apply Now
+    </button>
+  </section>
+
+  <!-- Why Study MBBS Abroad -->
+  <section class="container mx-auto py-10 text-center animate__animated animate__fadeInUp">
+    <h2 class="text-3xl font-semibold">Why Study MBBS Abroad?</h2>
+    <p class="mt-4 text-gray-600">Affordable fees, quality education, global exposure.</p>
+  </section>
+
+  <!-- Top Countries -->
+  <section class="container mx-auto py-10 animate__animated animate__fadeInUp">
+    <h2 class="text-3xl font-semibold text-center">Top Countries</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-6">
+      <div class="p-4 bg-white shadow rounded text-center">Russia</div>
+      <div class="p-4 bg-white shadow rounded text-center">Uzbekistan</div>
+      <div class="p-4 bg-white shadow rounded text-center">Kazakhstan</div>
+      <div class="p-4 bg-white shadow rounded text-center">Philippines</div>
+      <div class="p-4 bg-white shadow rounded text-center">Georgia</div>
+      <div class="p-4 bg-white shadow rounded text-center">Egypt</div>
+    </div>
+  </section>
+
+  <!-- Admission Process -->
+  <section class="container mx-auto py-10 text-center animate__animated animate__fadeInUp">
+    <h2 class="text-3xl font-semibold">Admission Process & Eligibility</h2>
+    <p class="mt-4 text-gray-600">Step 1: Choose a country, Step 2: Apply online, Step 3: Get admission letter.</p>
+  </section>
+
+  <!-- Lead Generation Form -->
+  <section class="container mx-auto py-10 text-center bg-white shadow-lg p-6 max-w-md rounded animate__animated animate__fadeInUp">
+    <h2 class="text-2xl font-semibold">Apply Now</h2>
+    <form id="lead-form" class="mt-4">
+      <input type="text" id="name" placeholder="Your Name" class="block w-full p-2 border rounded mb-2" required />
+      <input type="email" id="email" placeholder="Your Email" class="block w-full p-2 border rounded mb-2" required />
+      <input type="tel" id="phone" placeholder="Your Phone" class="block w-full p-2 border rounded mb-2" required />
+      <select id="country" class="block w-full p-2 border rounded mb-4">
+        <option value="Russia">Russia</option>
+        <option value="Uzbekistan">Uzbekistan</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Philippines">Philippines</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Egypt">Egypt</option>
+      </select>
+      <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded">Submit</button>
+    </form>
+    <!-- Message div for feedback -->
+    <div id="submitMessage" class="mt-4 text-green-600 text-lg font-semibold hidden"></div>
+  </section>
+
+  <script>
+    // Form Submission: Save to Local Storage and display animated message
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("lead-form");
+      const messageDiv = document.getElementById("submitMessage");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Gather form data
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          country: document.getElementById("country").value,
+        };
+
+        // Save form data to local storage
+        localStorage.setItem("mbbsLead", JSON.stringify(formData));
+
+        // Show animated success message
+        messageDiv.textContent = "Yes working";
+        messageDiv.classList.remove("hidden");
+        messageDiv.classList.add("animate__animated", "animate__fadeIn");
+
+        // Fade out the message after 3 seconds
+        setTimeout(() => {
+          messageDiv.classList.remove("animate__fadeIn");
+          messageDiv.classList.add("animate__fadeOut");
+          setTimeout(() => {
+            messageDiv.classList.add("hidden");
+            messageDiv.classList.remove("animate__fadeOut");
+          }, 1000);
+        }, 3000);
+      });
+    });
+  </script>
+</body>
+</html>
